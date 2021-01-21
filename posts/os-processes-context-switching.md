@@ -7,11 +7,11 @@ Have you ever wondered how your computer runs so many applications simultaneousl
 
 A quick Google search will return the following definition:
 
-> the ability to execute more than one program or task simultaneously
+> The ability to execute more than one program or task simultaneously
 
 I find this a bit misleading, however. First, we need to distinguish a program that is *executing* from one that is *running*. A process that is executing is one that is on the CPU. That is, its program code is currently being processed by the CPU. A running process may not be executing. Rather, it might be waiting for some event to occur, sleeping, or in a queue of processes waiting to get back on the processor. So a better definition may be:
 
-> the **actual or apparent** ability to execute more than one program or task simultaneously
+> The **actual or apparent** ability to execute more than one program or task simultaneously
 
 Even though we might have **M** running programs, we can only have **N** executing programs, where N is bounded by the available physical resources. For example, if we have 20 running programs and our hardware consists of a dual core CPU, then (dismissing [hyper-threading](https://en.wikipedia.org/wiki/Hyper-threading)) we can only execute 2 programs at any given moment. One of the Operating System's primary responsibility is managing and scheduling the execution of multiple user processes and threads, to give the end user the illusion that all of their programs are executing. Delegating this task to user-level code would pose severe security and, quite possibly, performance risks. One of the running processes may decide it wants to run forever and never yield the CPU. Programs have multiple states they may be in, and the OS must manage the states of all processes and terminate, yield, or interrupt them as necessary.
 
