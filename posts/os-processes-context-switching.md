@@ -3,7 +3,7 @@ title: 'Operating Systems: An Intro to Concurrency and Context Switching'
 date: '01-19-2021'
 ---
 
-Have you ever wondered how your computer runs so many applications simultaneously? Most computers are running hundreds if not thousands of processes. Commodity PCs don't include hundreds of CPUs, so how the heck is this possible? To answer this, we'll need to understand what *concurrency* is and how the OS manages multiple program contexts and let each one get its fair share of time on the CPU. Well, what is *concurrency*?
+Have you ever wondered how your computer runs so many applications simultaneously? Most computers are running hundreds if not thousands of processes. Commodity PCs don't include hundreds of CPUs, so how the heck is this possible? To answer this, we'll need to understand what *concurrency* is and how the OS manages multiple program contexts and lets each one get its fair share of time on the CPU. Well, what is *concurrency*?
 
 A quick Google search will return the following definition:
 
