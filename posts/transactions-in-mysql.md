@@ -1,6 +1,6 @@
 ---
 title: Transactions in MySQL
-date: 01-27-2020
+date: 01-27-2021
 ---
 
 In this post, I'll be going over transactions in MySQL with a focus on common pitfalls of using transactions, and how to avoid them. If you're not familiar with transactions, I suggest you do some additional research as the brief overview I provide may not suffice.
