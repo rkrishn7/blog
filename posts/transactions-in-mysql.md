@@ -18,14 +18,15 @@ Transactions must adhere to certain *isolation* properties which ensure consiste
 InnoDB, the default storage engine used by MySQL, offers four transaction isolation levels.
 
 - **Repeatable Read** - This is the default isolation level for InnoDB. When operating at this level, `SELECT` statements are consistent in a single transaction. That is, if another transaction updates data in a set of rows that have been selected by a different transaction, the first transaction will not see the new values when issuing more `SELECT` statements. For example, consider the following transactions:
+  <br />
   ```sql
   START TRANSACTION;
   SELECT * FROM customers WHERE id = 1;  
   ```
   Suppose there are only two columns in the table, `(id, name)`, and the `SELECT` returns one result: `(1, "Rohan")`. In a separate connection, another transaction begins:
+  <br />
   ```sql
   START TRANSACTION;
   UPDATE customers SET name = "Jim" WHERE id = 1;
   ```
-  After the second transaction updates the row, the first transaction issues the same `SELECT`. However, `name` is not updated. Repeatable Read guarantees that the result of subsequent reads are consistent with the first read in the transaction. Note that this applies even when a single transaction updates a row it had just selected. Attempting to select the record again in the same transaction will not return the updated record.
-
+  After the second transaction updates the row, the first transaction issues the same `SELECT`. However, `name` is not updated. Repeatable Read guarantees that the result of subsequent reads are consistent with the first read in the transaction. Note that an update within the same transaction will trigger another snapshot that is used for subsequent `SELECT`'s.
