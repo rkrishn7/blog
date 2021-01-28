@@ -1,5 +1,5 @@
 ---
-title: [WIP] Transactions in MySQL
+title: WIP Transactions in MySQL
 date: 01-27-2021
 ---
 
